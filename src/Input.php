@@ -18,13 +18,15 @@ class Input
     // Maximum cells of slice
     private $H;
 
-    // String
+    /** @var string[] $pizza */
     private $pizza;
 
     public function __construct(string $filename)
     {
         $f = fopen($filename, 'r');
-        $this->parseInputFile($f);
+        if ($f !== false) {
+            $this->parseInputFile($f);
+        }
     }
 
     public function getR(): int
@@ -47,15 +49,22 @@ class Input
         return $this->H;
     }
 
-    public function getPizza(): string
+    public function getPizza(): array
     {
         return $this->pizza;
     }
 
-    private function parseInputFile(int $handle): void
+    private function parseInputFile($handle): void
     {
+        $isFirstLine = true;
+        $this->pizza = [];
         while ($line = fgets($handle)) {
-            echo 'me';
+            if ($isFirstLine) {
+                list($this->R, $this->C, $this->L, $this->H) = array_map('intval', explode(' ', $line));
+                $isFirstLine = false;
+            } else {
+                $this->pizza[] = trim($line);
+            }
         }
     }
 }
