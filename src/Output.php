@@ -14,6 +14,13 @@ class Output
         $this->slices[] = $slice;
     }
 
+    public function addRow(Row $row): void
+    {
+        foreach ($row->getSlices() as $slice) {
+            $this->slices[] = $slice;
+        }
+    }
+
     public function __toString(): string
     {
         $string = count($this->slices) . "\n";
