@@ -24,8 +24,9 @@ class Slice
 
     public function getScore(): int
     {
-        $height = abs($this->r1 - $this->r2);
-        $width = abs($this->c1 - $this->c2);
+        $height = (int)abs($this->r1 - $this->r2);
+        $width = (int)abs($this->c1 - $this->c2);
+
         return $width * $height;
     }
 

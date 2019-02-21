@@ -1,13 +1,3 @@
-# Skeleton PHP Application
+# Hashcode: Pizza Problem
 
-## Includes
-
-- composer (PSR-4)
-- phpunit
-- phpcs PSR12
-
-## To install
-
-```
-composer create-project filkaris/php-skeleton
-```
+Solution credits to https://www.youtube.com/watch?v=dg2UUX4xOk8
