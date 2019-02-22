@@ -5,4 +5,5 @@ use App\Main;
 
 require __DIR__ . '/vendor/autoload.php';
 
-$main = new Main('resources/example.in');
+$main = new Main();
+$main('resources/big.in');

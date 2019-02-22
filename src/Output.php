@@ -7,7 +7,7 @@ namespace App;
 class Output
 {
     /** @var Slice[] $slices */
-    private $slices;
+    private $slices = [];
 
     public function addSlice(Slice $slice): void
     {
