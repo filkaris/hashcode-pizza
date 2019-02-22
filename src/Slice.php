@@ -42,7 +42,9 @@ class Slice
 
     public function __toString(): string
     {
-        return "{$this->r1} {$this->c1} {$this->r2} {$this->c2}";
+        $r2 = $this->r2 - 1;
+        $c2 = $this->c2 - 1;
+        return "{$this->r1} {$this->c1} $r2 $c2";
     }
 
     public function isValidContents(int $L): bool
